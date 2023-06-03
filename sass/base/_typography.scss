@@ -1,0 +1,13 @@
+@import '../abstract/variables';
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: $primary-font-family;
+   font-size: $body-text-size;
+   font-weight: $font-weight-400;
+   line-height: $body-text-line-height;
+   color: $primary-text-color;
+}
