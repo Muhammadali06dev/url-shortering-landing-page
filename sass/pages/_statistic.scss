@@ -102,8 +102,13 @@
       &__item {
          align-self: stretch;
 
+         &:first-child {
+            z-index: 6;
+         }
+
          &:nth-child(2) {
-            align-self: stretch
+            align-self: stretch;
+            z-index: 5;
          }
 
          &:nth-child(3) {
@@ -126,17 +131,29 @@
       &__item {
          max-width: 327px;
 
+
          &::before {
             left: 36%;
+            z-index: 5;
+         }
+
+         &:not(:first-child)::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            background: $brand-color;
+            height: 92px;
+            left: 48%;
+            top: -92px;
+            z-index: 0;
+
          }
       }
 
    }
 
    .axis {
-      transform: rotate(90deg);
-      width: 500px;
-      left: -27%;
+      display: none;
    }
 }
 
