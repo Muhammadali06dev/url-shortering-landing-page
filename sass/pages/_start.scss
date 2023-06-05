@@ -1,0 +1,66 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+@import '../abstract/functions';
+
+.start {
+   background-color: $bg-color;
+   overflow: hidden;
+   // background-image: url('../images/footer-right-bg.png'),
+   //    url('../images/footer-bottom-bg.png'),
+   //    url('../images/footer-left-bg.png');
+   // background-repeat: no-repeat, no-repeat, no-repeat;
+
+   // background-position: top 52% right -60%,
+   //    bottom 138% left -19%, top 130% left -80%;
+
+   &__container {
+      padding: 5.7rem 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 3.2rem;
+      position: relative;
+   }
+
+   &__title {
+      font-weight: $fw-bold;
+      font-size: 4.8rem;
+      line-height: 1.2;
+      color: #fff;
+      letter-spacing: -1px;
+      z-index: 2
+   }
+
+   &__bg:first-child {
+      position: absolute;
+      top: -72%;
+      right: -56%;
+
+   }
+
+   &__bg:nth-child(2) {
+      position: absolute;
+      bottom: -230%;
+      right: 38%;
+      transform: rotate(-21deg);
+   }
+
+   &__bg:nth-child(3) {
+      position: absolute;
+      bottom: 46%;
+      right: 68%;
+   }
+
+}
+
+@media only screen and (max-width:576px) {
+   .start {
+
+      &__title {
+         font-size: 2.8rem;
+         line-height: 1.71;
+         text-align: center;
+         letter-spacing: -0.7px;
+      }
+   }
+}

@@ -1,0 +1,107 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+@import '../abstract/functions';
+
+.shorter {
+   background: #F2F2F2;
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.4rem;
+      position: relative;
+      top: -80px;
+   }
+
+   &__item {
+      padding: 5.2rem 6.4rem;
+      background-color: #3A3054;
+      border-radius: 10px;
+      display: flex;
+      background-image: url('../images/footer-right-bg.png'), url('../images/footer-right-bg.png');
+      background-repeat: no-repeat;
+      background-position: right -63% top 76%, left -33% bottom 112%;
+      background-size: 715.16px 409.91px, 715.16px 409.91px;
+
+      & input {
+         padding: 1.4rem 0 1.4rem 3.2rem;
+         background: #FFFFFF;
+         border-radius: 10px;
+         margin-right: 2.4rem;
+         font-size: 2rem;
+         line-height: 1.8;
+         letter-spacing: 0.15px;
+         color: rgba(52, 49, 61, 0.5);
+         flex-grow: 1;
+
+         &:focus {
+            color: rgb(52, 49, 61);
+         }
+      }
+
+
+   }
+
+   &__results {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.6rem;
+   }
+
+   &__result {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.6rem 2.4rem 1.6rem 3.2rem;
+      background: #FFFFFF;
+      border-radius: 5px;
+
+      &-copy {
+         display: flex;
+         align-items: center;
+      }
+
+      &-link,
+      &-shorted {
+         font-size: 2rem;
+         line-height: 1.8;
+         letter-spacing: 0.15px;
+         color: #34313D;
+         overflow: hidden;
+      }
+
+      &-shorted {
+         color: $brand-color;
+      }
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .shorter {
+
+      &__item {
+         flex-direction: column;
+         row-gap: 3.8rem;
+
+         & input {
+            margin: 0;
+         }
+      }
+
+      &__result {
+         flex-direction: column;
+         align-items: stretch;
+
+         &-copy {
+            flex-wrap: wrap;
+         }
+      }
+   }
+}
+
+hr {
+   background: #9E9AA8;
+   opacity: 0.25;
+   margin: 0.6rem 0;
+   z-index: 5;
+}

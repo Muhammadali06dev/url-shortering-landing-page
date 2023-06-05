@@ -1,3 +1,84 @@
 @import '../abstract/variables';
 @import '../abstract/mixins';
 @import '../abstract/functions';
+
+.button {
+   background: #2BD0D0;
+   border-radius: 28px;
+   color: #FFFFFF;
+   font-weight: $fw-bold;
+   transition: all 0.3s ease;
+
+   &:hover {
+      background: #9AE3E3;
+   }
+}
+
+.header {
+   &__btn-1 {
+      color: #9E9AA8;
+      font-weight: $fw-bold;
+      line-height: 1.45;
+      padding: 0 2.7rem 0 0;
+      transition: all 0.3s ease;
+
+      &:hover {
+         color: #34313D;
+      }
+
+   }
+
+   &__btn-2 {
+      padding: 0.9rem 2.3rem 0.8rem 2.4rem;
+      line-height: 1.45;
+
+
+   }
+}
+
+.home__btn {
+   padding: 1.4rem 4rem 1.2rem;
+   font-size: 2rem;
+   line-height: 1.5;
+
+
+}
+
+.shorter__button {
+   border-radius: 10px;
+   padding: 1.8rem 4rem 1.6rem 4.1rem;
+   font-size: 2rem;
+   line-height: 1.5rem;
+}
+
+@media only screen and (max-width:992px) {
+   .shorter__button {
+      padding: 2.4rem 4rem 2.2rem 4.2rem;
+   }
+}
+
+.shorter__result-btn {
+   padding: 1rem 3.1rem 0.7rem 3.1rem;
+   margin-left: 2.4rem;
+   border-radius: 5px;
+
+}
+
+.shorter__result-btn--selected {
+   background: #3A3054;
+   padding: 1rem 2.1rem 0.7rem 2.1rem;
+   border-radius: 5px;
+   margin-left: 2.4rem;
+
+   &:hover {
+      background: #3a305486;
+   }
+}
+
+
+.start__btn {
+   padding: 2.2rem 4rem 2rem 4rem;
+   font-size: 2rem;
+   line-height: 1.5rem;
+   z-index: 2
+}

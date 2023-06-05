@@ -1,3 +1,81 @@
 @import '../abstract/variables';
 @import '../abstract/mixins';
 @import '../abstract/functions';
+
+.footer {
+   padding: 7rem 0;
+   background: #232127;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+   }
+
+   &__logo {
+      margin-right: 12.7rem;
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      padding-right: 1rem;
+
+   }
+
+   &__item {
+      color: $secondary-text-color;
+      line-height: 1.46;
+      letter-spacing: -0.234375px;
+      transition: all .3s ease;
+
+      &:hover {
+         color: #fff;
+      }
+   }
+
+
+   &__item:first-child {
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      letter-spacing: -0.25px;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+
+   }
+
+   &__socials {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+
+      & a svg path {
+         transition: all .3s ease;
+      }
+
+      & a:hover svg path {
+         fill: $brand-color;
+      }
+   }
+}
+
+@media only screen and (max-width:768px) {
+   .footer {
+      &__container {
+         flex-direction: column;
+         align-items: center;
+         row-gap: 4rem;
+      }
+
+      &__logo {
+         margin: 0;
+      }
+
+      &__list {
+         padding: 0;
+         align-items: center;
+      }
+   }
+}

@@ -1,3 +1,85 @@
 @import '../abstract/variables';
 @import '../abstract/mixins';
 @import '../abstract/functions';
+
+.home {
+   padding: 14.4rem 0 20rem 0;
+
+   &__container {
+      @include flex;
+   }
+
+   &__title {
+      max-width: 565px;
+      width: 100%;
+      color: $headings-color;
+      font-weight: $fw-bold;
+      font-size: 8rem;
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 0.5rem;
+
+   }
+
+   &__description {
+      max-width: 540px;
+      width: 100%;
+      font-size: 2.2rem;
+      line-height: 1.64;
+      letter-spacing: 0.15px;
+      margin-bottom: 5.4rem;
+   }
+
+   &__images {
+      z-index: -1;
+      position: relative;
+      transform: translateX(50px)
+   }
+
+   &__img-1 {
+      position: absolute;
+      z-index: -2;
+      left: 16%;
+      top: -16%;
+   }
+}
+
+@media only screen and (max-width:1200px) {
+   .home {
+      &__container {
+         flex-wrap: wrap-reverse;
+         justify-content: center;
+      }
+
+      &__info {
+         padding-top: 10rem;
+         text-align: center;
+      }
+
+      &__images {
+         transform: translateX(0);
+      }
+   }
+}
+
+@media only screen and (max-width:768px) {
+   .home {
+
+      &__title {
+         font-weight: $fw-bold;
+         font-size: 4.2rem;
+         line-height: 1.14;
+         text-align: center;
+         letter-spacing: -1.05px;
+         margin-bottom: 1.5rem;
+      }
+
+      &__description {
+         font-size: 1.8rem;
+         line-height: 1.67;
+         text-align: center;
+         letter-spacing: 0.122727px;
+         margin-bottom: 3.2rem;
+      }
+   }
+}

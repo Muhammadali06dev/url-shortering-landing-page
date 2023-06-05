@@ -1,3 +1,66 @@
 @import '../abstract/variables';
 @import '../abstract/mixins';
 @import '../abstract/functions';
+
+.header {
+   padding: 4.8rem 0 0 0;
+
+   &__container {
+      @include flex;
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+   }
+
+   &__menu {
+      display: none;
+   }
+
+}
+
+.navigation {
+   display: flex;
+   align-items: center;
+   gap: 4.543rem;
+
+   &__list {
+      display: flex;
+      gap: 1rem;
+   }
+
+   &__item {
+      padding: 0 2.9rem 0 0;
+      color: #9E9AA8;
+      font-weight: $fw-bold;
+      line-height: 1.45;
+      transition: all 0.3s ease;
+
+      &:hover {
+         color: #34313D;
+      }
+   }
+
+   &__item:nth-child(2) {
+      padding: 0 3.2rem 0 0;
+   }
+}
+
+@media only screen and (max-width:768px) {
+   .header {
+
+      &__buttons {
+         display: none;
+      }
+
+      &__menu {
+         display: inline-block;
+      }
+   }
+
+   .navigation__list {
+      display: none;
+   }
+}

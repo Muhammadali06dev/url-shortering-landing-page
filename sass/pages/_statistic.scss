@@ -1,0 +1,162 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+@import '../abstract/functions';
+
+.statistic {
+   padding: 12rem 0 12rem 0;
+   background: #F2F2F2;
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__title {
+      color: $headings-color;
+      font-weight: $fw-bold;
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 1.8rem;
+   }
+
+   &__description {
+      max-width: 540px;
+      font-size: 1.8rem;
+      line-height: 1.78;
+      letter-spacing: 0.122727px;
+      text-align: center;
+      margin-bottom: 10rem;
+   }
+
+   &__wrapper {
+      position: relative;
+   }
+
+   &__list {
+      display: flex;
+      gap: 3rem;
+      min-height: 355px;
+
+   }
+
+   &__item {
+      padding: 7.7rem 3.2rem 4.1rem;
+      background: #FFFFFF;
+      border-radius: 5px;
+      position: relative;
+      align-self: flex-start;
+
+      &::before {
+         display: inline-block;
+         position: absolute;
+         content: "";
+         width: 88px;
+         height: 88px;
+         background-color: $bg-color;
+         border-radius: 50%;
+         background-image: url('../images/rising-diagrama-icon.svg');
+         background-repeat: no-repeat;
+         background-position: center;
+         top: -44px;
+         left: 3.2rem;
+      }
+
+      &:nth-child(2)::before {
+         background-image: url('../images/speedometr-icon.svg');
+      }
+
+      &:nth-child(3)::before {
+         background-image: url('../images/pens-icon.svg');
+      }
+
+      &-title {
+         color: $headings-color;
+         font-size: 2.2rem;
+         line-height: 1.5;
+      }
+
+   }
+
+   &__item:nth-child(2) {
+      align-self: center;
+   }
+
+   &__item:nth-child(3) {
+      align-self: flex-end;
+   }
+}
+
+.axis {
+   position: absolute;
+   z-index: 0;
+   height: 8px;
+   background: $brand-color;
+   top: 50%;
+   width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+   .statistic {
+
+      &__item {
+         align-self: stretch;
+
+         &:nth-child(2) {
+            align-self: stretch
+         }
+
+         &:nth-child(3) {
+            align-self: stretch
+         }
+      }
+   }
+}
+
+@media only screen and (max-width:768px) {
+   .statistic {
+
+
+      &__list {
+         flex-direction: column;
+         align-items: center;
+         row-gap: 9.2rem;
+      }
+
+      &__item {
+         max-width: 327px;
+
+         &::before {
+            left: 36%;
+         }
+      }
+
+   }
+
+   .axis {
+      transform: rotate(90deg);
+      width: 500px;
+      left: -27%;
+   }
+}
+
+@media only screen and (max-width:576px) {
+   .statistic {
+      padding: 8rem 0 8rem 0;
+
+      &__title {
+         font-size: 2.8rem;
+         line-height: 1.71;
+         text-align: center;
+         letter-spacing: -0.7px;
+         margin-bottom: 1.6rem;
+      }
+
+      &__description {
+         font-size: 16px;
+         line-height: 1.75;
+         text-align: center;
+         letter-spacing: 0.109091px;
+      }
+   }
+}
